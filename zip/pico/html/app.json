@@ -1,0 +1,13 @@
+{
+    "name": "picoCAD",
+    "version": "v1.0.0",
+    "description": "picoCAD是一款自主研发的cad软件，请大家试用!",
+    "logo": "images/logo.png",
+    "category": "办公工具",
+    "type":"1",
+    "androidUrl":"",
+    "iosUrl":"itms-services://?action=download-manifest&url=https://appstore.365power.cn:443/plist/ajoyojjr",
+    "awUrl":"",
+    "iwUrl":"",
+    "images":["1.jpg"]
+}

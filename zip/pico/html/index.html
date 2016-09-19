@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta charset="utf-8" />
+    <title>知了</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/css.css">
+    <script src="js/respond.js"></script>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/mobileTools.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/tools.js"></script>
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <div id="noscroll">
+        <div class="topbar">
+            <div class="container">
+                <h1>picoCAD 应用详情</h1>
+            </div>
+        </div>
+        <div class="container" id="detail">
+        </div>
+        <div class="tip"></div>
+        <script type="text/html" id="idDetailInfo">
+            <div class="detail">
+                <div class="row">
+                    <div class="col-md-3 col-xs-4"><img class="img-responsive" src="%logo%"></div>
+                    <div class="col-md-6 col-xs-5 pd_none">
+                        <p class="detail_version">%version%</p></br>
+                        <p class="detail_intro">%description%</p>
+                        
+                    </div>
+                    <div class="col-xs-3 load_btn"><button id="load_phone">下载</button></div>
+                </div>
+                <div class="detail_pic app_intro">
+                    <div class="col-md-12 col-xs-12"><h2>详情</h2></div>
+                    <p class="detail_intro">%description%</p>
+                </div>
+            </div>
+        </script>
+        <div class="container detail_pic">
+            <div class="row">
+                <div class="col-md-12 col-xs-12">
+                    <h2>效果展示</h2>
+                </div>
+                <div id="myCarousel" class="col-md-12 col-xs-10 carousel slide" data-ride="carousel">
+                    <!-- 轮播（Carousel）指标 -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
+                    <!-- 轮播（Carousel）项目 -->
+                    <div class="carousel-inner">
+                    </div>
+                    <!-- 轮播（Carousel）导航 -->
+                    <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                    <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/html" id="idCarousel">
+        <div class="item %active%">
+            <img src="images/%image%" class="img-responsive" alt="%alt%">
+        </div>
+    </script>
+        <script type="text/html" id="idCarousel2">
+            .detail .row .col-xs-3 button{
+                margin-top: 20px;
+                padding:5px 10px;
+            }
+            .pd_none .detail_intro{display: none;}
+            .app_intro{display: block;}
+            .app_intro .detail_intro{display: block;}
+            .img_list ul{ width: 3500px; position: absolute; height: 260px; left: 0px;}
+            .img_list li{ float: left; width: 100px;}
+            .img_list img{ margin: 1px; width: 100px; height: 200px;}
+            .carousel-control.left{font-size: 60px;left: -20px;}
+            .carousel-control.right{font-size: 60px;right: -20px;}
+            .tip{display:none;}
+        </script>
+    </div>
+    <script>
+            loadJson("./app.json",function(info){
+                for( var i=0; i<info.images.length; ++i ){
+                    var v = {
+                        image: info.images[i],
+                        alt:i,
+                        active:i==0?"active":""
+                    }
+                    tools.templateAppend("#idCarousel", ".carousel-inner", v);
+                }
+				$("title").html(info.name)
+             });
+        </script>
+</body>
+
+</html>
