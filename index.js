@@ -1,1 +1,1 @@
-console.log("aaaa")
+require("./server.js")
