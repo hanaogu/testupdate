@@ -8,7 +8,7 @@ var fs = require("fs"),
 var tools = require("./tools.js");
 var root = process.cwd(),
     host = "localhost",
-    port = "8888";
+    port = process.env.PORT||"8888";
 tools.getIp(function (ip) {
     host = ip || host;
 })
