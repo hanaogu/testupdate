@@ -1,4 +1,4 @@
 {
-    "version":"1.0.6",
-	"description":"修改正交捕捉不正确的问题"
+    "version":"1.0.7",
+	"description":"增加对齐功能，快捷键参考CS游戏\n上： w\n下： s\n左：a\n右： d"
 }
