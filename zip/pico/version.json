@@ -1,4 +1,4 @@
 {
-    "version":"1.0.8",
-	"description":"修正某些图纸插入图例崩的问题"
+    "version":"1.0.9",
+	"description":"修正保存某些图纸报错的问题"
 }
